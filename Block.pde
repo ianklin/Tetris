@@ -28,16 +28,16 @@ class Block {
   }
   public boolean touchBottom() {
     for (int i = 0; i < allSquares.size() - 4; i++) {
-      if (s1.y >= allSquares.get(i).y - 40 && s1.x == allSquares.get(i).x) {
+      if (s1.y == allSquares.get(i).y - 40 && s1.x == allSquares.get(i).x) {
         return true;
       }
-      if (s2.y >= allSquares.get(i).y - 40 && s2.x == allSquares.get(i).x) {
+      if (s2.y == allSquares.get(i).y - 40 && s2.x == allSquares.get(i).x) {
         return true;
       }
-      if (s3.y >= allSquares.get(i).y - 40 && s3.x == allSquares.get(i).x) {
+      if (s3.y == allSquares.get(i).y - 40 && s3.x == allSquares.get(i).x) {
         return true;
       }
-      if (s4.y >= allSquares.get(i).y - 40 && s4.x == allSquares.get(i).x) {
+      if (s4.y == allSquares.get(i).y - 40 && s4.x == allSquares.get(i).x) {
         return true;
       }
     }
@@ -47,12 +47,40 @@ class Block {
     return false;
   }
   public boolean touchLeft() {
+    for (int i = 0; i < allSquares.size() - 4; i++) {
+      if (s1.y == allSquares.get(i).y && s1.x == allSquares.get(i).x + 40) {
+        return true;
+      }
+      if (s2.y == allSquares.get(i).y && s2.x == allSquares.get(i).x + 40) {
+        return true;
+      }
+      if (s3.y == allSquares.get(i).y && s3.x == allSquares.get(i).x + 40) {
+        return true;
+      }
+      if (s4.y == allSquares.get(i).y && s4.x == allSquares.get(i).x + 40) {
+        return true;
+      }
+    }
     if (s1.x <= 0 || s2.x <= 0 || s3.x <= 0 || s4.x <= 0) {
       return true;
     }
     return false;
   }
   public boolean touchRight() {
+    for (int i = 0; i < allSquares.size() - 4; i++) {
+      if (s1.y == allSquares.get(i).y && s1.x == allSquares.get(i).x - 40) {
+        return true;
+      }
+      if (s2.y == allSquares.get(i).y && s2.x == allSquares.get(i).x - 40) {
+        return true;
+      }
+      if (s3.y == allSquares.get(i).y && s3.x == allSquares.get(i).x - 40) {
+        return true;
+      }
+      if (s4.y == allSquares.get(i).y && s4.x == allSquares.get(i).x - 40) {
+        return true;
+      }
+    }
     if (s1.x >= 360 || s2.x >= 360 || s3.x >= 360 || s4.x >= 360) {
       return true;
     } 
