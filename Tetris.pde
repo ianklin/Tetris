@@ -3,8 +3,21 @@ ArrayList<Square> allSquares = new ArrayList<Square>();
 int timer;
 int score;
 boolean endGame = false;
+PImage red;
+PImage orange;
+PImage yellow;
+PImage green;
+PImage blue;
+PImage purple;
 void setup(){
   size(400,800);
+  String filePath = sketchPath();
+  red = loadImage(filePath + "/redSquare.jpg");
+  orange = loadImage(filePath + "/orangeSquare.jpg"); 
+  yellow = loadImage(filePath + "/yellowSquare.jpg"); 
+  green = loadImage(filePath + "/greenSquare.jpg"); 
+  blue = loadImage(filePath + "/blueSquare.jpg"); 
+  purple = loadImage(filePath + "/purpleSquare.jpg"); 
   block1 = randomBlock();
   timer = 0;
   score = 0;
@@ -19,6 +32,7 @@ void draw(){
     timer = 0;
   }
   if(block1.touchBottom()){
+    block1.randint = floor(random(0,6));
     block1 = randomBlock();
     clearRow();
   }

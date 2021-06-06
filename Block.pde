@@ -2,10 +2,13 @@ class Block {
   float x, y;  
   Square s1, s2, s3, s4;
   int rotation;
+  int blockColor;
+  int randint = floor(random(0,6));
   public Block() {
     x = 200;
     y = 0;
     rotation = 0;
+    blockColor = randint;
   }
   public void addToList() {
     allSquares.add(s1);
@@ -14,10 +17,41 @@ class Block {
     allSquares.add(s4);
   }
   public void show() {
-    s1.show();
-    s2.show();
-    s3.show();
-    s4.show();
+    s1.squareColor = blockColor;
+    s2.squareColor = blockColor;
+    s3.squareColor = blockColor;
+    s4.squareColor = blockColor;
+    if(blockColor == 0){
+      s1.show();
+      s2.show();
+      s3.show();
+      s4.show();
+    } else if(blockColor == 1){
+      s1.show();
+      s2.show();
+      s3.show();
+      s4.show();
+    } else if(blockColor == 2){
+      s1.show();
+      s2.show();
+      s3.show();
+      s4.show();
+    } else if(blockColor == 3){
+      s1.show();
+      s2.show();
+      s3.show();
+      s4.show();
+    } else if(blockColor == 4){
+      s1.show();
+      s2.show();
+      s3.show();
+      s4.show();
+    } else {
+      s1.show();
+      s2.show();
+      s3.show();
+      s4.show();
+    } 
   }
   public void fall() {
     this.y += 40;
